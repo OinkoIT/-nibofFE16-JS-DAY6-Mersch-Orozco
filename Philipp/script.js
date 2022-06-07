@@ -90,11 +90,13 @@ function printRows() {
   for (let product of cart) {
     result += `
     <li class="list-group-item d-flex justify-content-between align-items-center">
+      <img height="100px" width="100px" class="thumbnail" src="${product.image}">
       <div class="ms-2 me-auto">
         <div class="fw-bold product">${product.name}</div>
-        </div>
+        ${product.description}
+      </div>
         Quantity:
-        <span class="badge bg-primary rounded-pill ms-2 me-3 cart-quantity">${product.quantity}</span>
+        <span class="badge bg-primary rounded-pill fs-5 ms-2 me-3 cart-quantity">${product.quantity}</span>
         <span class="btn btn-info rounded-pill plus me-2">+</span>
         <span class="btn btn-info rounded-pill minus">-</span>
         <button class="del btn btn-danger rounded-circle  my-auto ms-3 fw-bold" type="button"> X </button>            

@@ -32,4 +32,9 @@
      object-position: center;
   overflow: hidden;
 }
+
+.thumbnail {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=styles.css.map */
