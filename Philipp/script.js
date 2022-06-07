@@ -131,7 +131,7 @@ function total() {
   if (total < 1000) {
     document.getElementById("price").innerHTML = total.toFixed(2) + " €";
   } else {
-    document.getElementById("price").innerHTML = total.toFixed(2) * .9 + " € (with 10% Discount!)";
+    document.getElementById("price").innerHTML = total.toFixed(2) * .9 + " € (with 10% (" + total*.1 + "€) Discount!)";
   }
 }
 
