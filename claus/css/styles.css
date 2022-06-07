@@ -29,7 +29,7 @@ body {
 }
 
 .product-button {
-    background-color: #A1A6B4;
+    /* background-color: #A1A6B4; */
     border: 1px solid #B4D2E7;
     color: white;
     text-shadow: 1px #B4D2E7;
@@ -38,7 +38,7 @@ body {
 }
 
 .product-button:hover {
-    background-color: #5aa3d8;
+    background-color: #207b1b;
     color: #eff1f5;
     ;
 
@@ -83,12 +83,12 @@ body {
 .btn-purchase {
 
     font-size: 1.5em;
-    background-color: #B4D2E7;
+    /* background-color: #B4D2E7; */
 }
 
 .btn-purchase:hover {
 
-    background-color: #5085aa;
+    background-color: #207b1b;
 }
 
 @media only screen and (max-width: 995px) {
