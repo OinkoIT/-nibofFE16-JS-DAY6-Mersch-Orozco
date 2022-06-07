@@ -1,0 +1,35 @@
+.mycol-bg {
+  background-color: cornflowerblue;
+}
+
+.my-bg-grey {
+  background-color: grey;
+}
+
+.mycol-txt {
+  color: cornflowerblue;
+}
+
+.my-bg-img {
+  background: url("http://cdn.shopify.com/s/files/1/0773/9449/products/IMG_3569_1024x1024.jpg?v=1643810852") rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.my-hero-container {
+  height: 60vh;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.cover-fit {
+  height: 35vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+}
+/*# sourceMappingURL=styles.css.map */
