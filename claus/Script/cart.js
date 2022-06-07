@@ -131,10 +131,11 @@ function total() {
         total = total + (val.preis * val.qtty);
     };
     if (total >= 100) {
+        let discount = total * 0.1
         total = total * 0.9;
-    } else {
-        total = total;
-    }
+        // alert("YOU JUST GOT A 10% DISCOUNT. You saved " + discount + " €!" )
+        document.getElementById("price").innerHTML += ` (Discount: ${discount}`;
+    };
     document.getElementById("price").innerHTML = total.toFixed(2) + " €";
 };
 
