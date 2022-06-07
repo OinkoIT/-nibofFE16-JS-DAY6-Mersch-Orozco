@@ -49,16 +49,17 @@ function addToEinkaufswagen(pflanze, index) {
     } else {
         einkaufswagen.push(pflanze);
     };
-    console.table(einkaufswagen);
+    // console.table(einkaufswagen);
     createRows();
     total();
+    count();
 };
 
 function createRows() {
     var result = "";
     for (let val of einkaufswagen) {
         result += `  
-            <div class="cart-row row d-flex">
+            <div class="cart-row row d-flex align-items-center">
                 <div class="cart-item col-6 my-3 ">
                     <img class="cart-item-image" src="${val.image}" width="100" height="100">
                     <span class="cart-item-title h5 ">${val.name}</span>
@@ -79,13 +80,28 @@ function createRows() {
     document.getElementById("cart-items").innerHTML = result;
 
     let plus = document.getElementsByClassName("plus");
+    let minus = document.getElementsByClassName("minus");
+    let del = document.getElementsByClassName("del");
 
     for (let i = 0; i < plus.length; i++) {
-        plus[1].addEventListener("click", function() {
-            plusQtty(i)
+        plus[i].addEventListener("click", function() {
+            plusQtty(i);
             total();
-        })
-    }
+            count();
+        });
+        minus[i].addEventListener("click", function() {
+            minusQtty(i);
+            total();
+            count();
+
+        });
+        del[i].addEventListener("click", function() {
+            deleteItem(i);
+            total();
+            count();
+
+        });
+    };
 };
 
 function plusQtty(i) {
@@ -93,11 +109,40 @@ function plusQtty(i) {
     document.getElementsByClassName("cart-quantity")[i].innerHTML = einkaufswagen[i].qtty;
 };
 
+function minusQtty(i) {
+    if (einkaufswagen[i].qtty == 1) {
+        einkaufswagen.splice(i,1);
+        createRows();
+    } else {
+        einkaufswagen[i].qtty -= 1;
+        document.getElementsByClassName("cart-quantity")[i].innerHTML = einkaufswagen[i].qtty;   
+    };
+};
+
+function deleteItem(i) {
+    einkaufswagen[i].qtty = 1;
+    einkaufswagen.splice(i,1);
+    createRows();
+};
+
 function total() {
     let total = 0;
     for (let val of einkaufswagen) {
         total = total + (val.preis * val.qtty);
     };
+    if (total >= 100) {
+        total = total * 0.9;
+    } else {
+        total = total;
+    }
     document.getElementById("price").innerHTML = total.toFixed(2) + " €";
+};
+
+function count() {
+    let count = 0;
+    for (let each of einkaufswagen) {
+        count = count + each.qtty;
+    };
+    document.getElementById("count").innerHTML = count + " Stück";
 };
 
